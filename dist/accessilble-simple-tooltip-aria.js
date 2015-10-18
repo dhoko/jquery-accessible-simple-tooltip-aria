@@ -55,7 +55,7 @@
     return '<span\n      class="' + className + ' ' + TOOLTIP_SIMPLE + '"\n      id="' + id + '"\n      role="tooltip"\n      aria-hidden="true">' + content + '</span>';
   };
 
-  Array.from($listTooltip).forEach(function (node, index) {
+  [].slice.call($listTooltip).forEach(function (node, index) {
 
     var iLisible = index + 1;
     var text = node.dataset.simpletooltipText || '';

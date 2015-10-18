@@ -55,8 +55,8 @@
       aria-hidden="true">${content}</span>`;
   };
 
-  Array
-    .from($listTooltip)
+  [].slice
+    .call($listTooltip)
     .forEach((node, index) => {
 
       let iLisible = index + 1;
