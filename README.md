@@ -1,3 +1,17 @@
-# jQuery accessible simple tooltip window, using ARIA
+# Accessible simple tooltip window, using ARIA
 
-Description will come, please be patient.
+This plugin will provide you an accessible and simple non-modal tooltip, using ARIA.
+
+It's available for jQuery too.
+
+## Start development
+
+### Requirements
+
+- node.js + npm
+
+Run `$ npm install`.
+
+### Build
+
+Run `$ npm run build`.

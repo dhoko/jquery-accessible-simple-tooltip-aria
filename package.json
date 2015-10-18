@@ -1,0 +1,29 @@
+{
+  "name": "jquery-accessible-simple-tooltip-aria",
+  "version": "1.0.0",
+  "description": "Description will come, please be patient.",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nico3333fr/jquery-accessible-simple-tooltip-aria.git"
+  },
+  "keywords": [
+    "aria"
+  ],
+  "author": "nico3333fr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nico3333fr/jquery-accessible-simple-tooltip-aria/issues"
+  },
+  "homepage": "https://github.com/nico3333fr/jquery-accessible-simple-tooltip-aria#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.2"
+  }
+}
