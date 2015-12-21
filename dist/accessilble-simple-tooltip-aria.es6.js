@@ -77,7 +77,7 @@
     });
 
     // Display the tooltip
-    ['mouseenter', 'focusin']
+    ['mouseenter', 'focus']
       .forEach(eventName => {
 
         doc.body
@@ -92,7 +92,7 @@
       });
 
     // Hide the tooltip
-    ['mouseleave', 'focusout', 'keydown']
+    ['mouseleave', 'blur', 'keydown']
       .forEach(eventName => {
 
         doc.body

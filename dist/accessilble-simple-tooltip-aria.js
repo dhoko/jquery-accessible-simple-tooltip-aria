@@ -74,7 +74,7 @@
   });
 
   // Display the tooltip
-  ['mouseenter', 'focusin'].forEach(function (eventName) {
+  ['mouseenter', 'focus'].forEach(function (eventName) {
 
     doc.body.addEventListener(eventName, function (e) {
 
@@ -86,7 +86,7 @@
   });
 
   // Hide the tooltip
-  ['mouseleave', 'focusout', 'keydown'].forEach(function (eventName) {
+  ['mouseleave', 'blur', 'keydown'].forEach(function (eventName) {
 
     doc.body.addEventListener(eventName, function (e) {
 
