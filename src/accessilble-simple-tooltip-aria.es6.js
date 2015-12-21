@@ -9,8 +9,8 @@
 
   const findById = id => doc.getElementById(id);
 
-  // Find all tooltips
-  const $listTooltip = doc.querySelectorAll('.' + TOOLTIP_SIMPLE);
+  // Find all tooltips (convert a NodeList to an array)
+  const $listTooltip = [].slice.call(doc.querySelectorAll('.' + TOOLTIP_SIMPLE));
 
   /**
    * Wrap a node inside a span tooltip container
@@ -19,6 +19,9 @@
    * @return {Node} the wrapper node
    */
   const wrapItem = (node, prefixClass) => {
+    // Join classNames
+    // filter(Boolean) -> remove undefined or empty string. prefixClass can be empty.
+    // We do not want to create 'undefined-xxx' nor '-xxx' but xxx
     const className = [prefixClass, TOOLTIP_SIMPLE_CONTAINER].filter(Boolean).join('-');
     let wrapper = doc.createElement('SPAN');
     wrapper.classList.add(className);
@@ -55,8 +58,7 @@
       aria-hidden="true">${content}</span>`;
   };
 
-  [].slice
-    .call($listTooltip)
+  $listTooltip
     .forEach((node, index) => {
 
       let iLisible = index + 1;

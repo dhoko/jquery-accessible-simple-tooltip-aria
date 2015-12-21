@@ -13,8 +13,8 @@
     return doc.getElementById(id);
   };
 
-  // Find all tooltips
-  var $listTooltip = doc.querySelectorAll('.' + TOOLTIP_SIMPLE);
+  // Find all tooltips (convert a NodeList to an array)
+  var $listTooltip = [].slice.call(doc.querySelectorAll('.' + TOOLTIP_SIMPLE));
 
   /**
    * Wrap a node inside a span tooltip container
@@ -23,6 +23,9 @@
    * @return {Node} the wrapper node
    */
   var wrapItem = function wrapItem(node, prefixClass) {
+    // Join classNames
+    // filter(Boolean) -> remove undefined or empty string. prefixClass can be empty.
+    // We do not want to create 'undefined-xxx' nor '-xxx' but xxx
     var className = [prefixClass, TOOLTIP_SIMPLE_CONTAINER].filter(Boolean).join('-');
     var wrapper = doc.createElement('SPAN');
     wrapper.classList.add(className);
@@ -55,7 +58,7 @@
     return '<span\n      class="' + className + ' ' + TOOLTIP_SIMPLE + '"\n      id="' + id + '"\n      role="tooltip"\n      aria-hidden="true">' + content + '</span>';
   };
 
-  [].slice.call($listTooltip).forEach(function (node, index) {
+  $listTooltip.forEach(function (node, index) {
 
     var iLisible = index + 1;
     var text = node.dataset.simpletooltipText || '';
